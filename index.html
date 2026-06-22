@@ -35,22 +35,41 @@
             <p class="utility-label light-label">Region sponsorship marketplace</p>
             <h1>Put more value on every jersey.</h1>
             <p class="lead">Explore vetted sponsor offers, compare uniform placements, and estimate what each opportunity could return to your Region.</p>
+            <a class="button hero-button" href="#offers">Shop sponsorship offers <span aria-hidden="true">→</span></a>
             <div class="trust-row" aria-label="Marketplace program benefits">
               <span>Nationally vetted</span><span>Region approved</span><span>No local negotiation</span>
             </div>
           </div>
-          <div class="region-tool">
-            <p class="utility-label">Your estimate</p>
-            <label for="regionName">Region name</label>
-            <input id="regionName" type="text" value="AYSO Region 55" />
-            <label for="uniformCount">Uniforms needed</label>
-            <input id="uniformCount" type="number" min="1" step="25" value="500" />
-            <p>Offer estimates update instantly. Your Region always retains final approval.</p>
+          <div class="hero-commerce">
+            <div class="kit-preview" aria-label="AYSO jersey sponsorship placement preview">
+              <div class="preview-topline"><span>Uniform inventory</span><strong>Placement preview</strong></div>
+              <div class="jersey-stage">
+                <svg class="jersey-svg" viewBox="0 0 360 300" role="img" aria-label="Jersey with sleeve, chest, and back sponsorship zones">
+                  <path class="jersey-shape" d="M112 54 146 34h68l34 20 74 30-31 58-39-16v128H108V126l-39 16-31-58z"/>
+                  <path class="jersey-collar" d="M147 35c10 27 56 27 66 0"/>
+                  <rect class="zone zone-chest" x="140" y="104" width="80" height="44" rx="5"/>
+                  <rect class="zone zone-left" x="60" y="86" width="53" height="30" rx="5" transform="rotate(-24 87 101)"/>
+                  <rect class="zone zone-right" x="247" y="86" width="53" height="30" rx="5" transform="rotate(24 274 101)"/>
+                  <rect class="zone zone-back" x="123" y="181" width="114" height="31" rx="5"/>
+                  <text x="180" y="131">CHEST</text><text x="180" y="201">BACK</text>
+                </svg>
+                <span class="placement-tag tag-sleeve">Sleeve</span>
+                <span class="placement-tag tag-chest">Premium</span>
+              </div>
+            </div>
+            <div class="region-tool">
+              <div class="estimate-heading"><p class="utility-label">Build your estimate</p><span>Live</span></div>
+              <div class="estimate-fields">
+                <label for="regionName">Region<input id="regionName" type="text" value="AYSO Region 55" /></label>
+                <label for="uniformCount">Uniforms<input id="uniformCount" type="number" min="1" step="25" value="500" /></label>
+              </div>
+              <p>Offer values update instantly. Your Region retains final approval.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="shop-section">
+      <section id="offers" class="shop-section">
         <div class="shell">
           <div class="section-bar">
             <div>

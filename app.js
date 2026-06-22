@@ -36,13 +36,14 @@ function renderMarketplace() {
     const sponsors = state.sponsors.filter((item) => activeFilter === "all" || item.status === activeFilter);
     grid.innerHTML = sponsors.length ? sponsors.map((sponsor) => `
       <article class="product-card" style="--card-accent:${escapeHTML(sponsor.accent || "#1b5fa7")}">
-        <div class="product-visual">${logoMarkup(sponsor)}<span class="status-pill ${sponsor.status}">${sponsor.status === "available" ? "Available now" : "Review required"}</span></div>
+        <div class="product-visual"><span class="card-index">0${state.sponsors.indexOf(sponsor) + 1}</span>${logoMarkup(sponsor)}<span class="status-pill ${sponsor.status}">${sponsor.status === "available" ? "Available now" : "Review required"}</span><span class="visual-caption">Approved sponsor opportunity</span></div>
         <div class="product-copy">
           <p class="utility-label">${escapeHTML(sponsor.category)}</p>
           <h3>${escapeHTML(sponsor.name)}</h3>
           <p>${escapeHTML(sponsor.description)}</p>
-          <div class="price-line"><span>From</span><strong>${currency.format(sponsor.sleeve)}<small> / uniform</small></strong></div>
-          <button class="button card-button" type="button" data-offer="${escapeHTML(sponsor.id)}">View offer</button>
+          <div class="placement-chips"><span>Sleeve ${currency.format(sponsor.sleeve)}</span><span>Back ${currency.format(sponsor.back)}</span><span>Chest ${currency.format(sponsor.chest)}</span></div>
+          <div class="price-line"><span>Starting value</span><strong>${currency.format(sponsor.sleeve)}<small> / uniform</small></strong></div>
+          <button class="button card-button" type="button" data-offer="${escapeHTML(sponsor.id)}"><span>Explore offer</span><span aria-hidden="true">→</span></button>
         </div>
       </article>`).join("") : `<div class="empty-results"><h3>No offers in this view.</h3><p>Try another filter or add an offer in Offer Manager.</p></div>`;
     grid.querySelectorAll("[data-offer]").forEach((button) => button.addEventListener("click", () => openOffer(button.dataset.offer)));
@@ -94,7 +95,7 @@ function renderBenefits() {
   grid.innerHTML = state.benefits.map((benefit) => {
     const placeholder = !benefit.url || benefit.url.startsWith("#placeholder");
     return `<article class="benefit-card" style="--card-accent:${escapeHTML(benefit.accent || "#1b5fa7")}">
-      <div class="benefit-visual">${logoMarkup(benefit)}</div>
+      <div class="benefit-visual"><span class="perk-badge">AYSO MEMBER OFFER</span>${logoMarkup(benefit)}<span class="benefit-discount-stamp">${escapeHTML(benefit.discount)}</span></div>
       <div class="benefit-copy"><p class="utility-label">${escapeHTML(benefit.brand)}</p><h2>${escapeHTML(benefit.name)}</h2><strong class="discount">${escapeHTML(benefit.discount)}</strong><p>${escapeHTML(benefit.description)}</p>
       <div class="code-row"><span>Member code</span><button type="button" data-copy="${escapeHTML(benefit.code)}" aria-label="Copy code ${escapeHTML(benefit.code)}">${escapeHTML(benefit.code)}</button></div>
       <a class="button full-button ${placeholder ? "placeholder-link" : ""}" href="${escapeHTML(benefit.url)}" ${placeholder ? 'aria-disabled="true"' : 'target="_blank" rel="noopener"'}>${placeholder ? "Partner link coming soon" : "Claim this offer"}</a></div>
