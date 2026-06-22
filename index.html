@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse AYSO-approved uniform sponsorship opportunities for your Region." />
+    <title>AYSO Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="marketplace">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell nav-shell">
+        <a class="brand-lockup" href="index.html" aria-label="AYSO Marketplace home">
+          <img src="assets/logos/ayso-square-heritage-blue-on-field-white-512.png" alt="AYSO" />
+          <span><strong>Marketplace</strong><small>Region opportunities</small></span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="active" href="index.html">Marketplace</a>
+          <a href="benefits.html">AYSO Benefits</a>
+          <a href="explainers.html">How it works</a>
+          <a class="admin-link" href="admin.html">Offer Manager</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="market-hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="utility-label light-label">Region sponsorship marketplace</p>
+            <h1>Put more value on every jersey.</h1>
+            <p class="lead">Explore vetted sponsor offers, compare uniform placements, and estimate what each opportunity could return to your Region.</p>
+            <div class="trust-row" aria-label="Marketplace program benefits">
+              <span>Nationally vetted</span><span>Region approved</span><span>No local negotiation</span>
+            </div>
+          </div>
+          <div class="region-tool">
+            <p class="utility-label">Your estimate</p>
+            <label for="regionName">Region name</label>
+            <input id="regionName" type="text" value="AYSO Region 55" />
+            <label for="uniformCount">Uniforms needed</label>
+            <input id="uniformCount" type="number" min="1" step="25" value="500" />
+            <p>Offer estimates update instantly. Your Region always retains final approval.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section">
+        <div class="shell">
+          <div class="section-bar">
+            <div>
+              <p class="utility-label">Available now</p>
+              <h2>Find the right sponsor fit.</h2>
+              <p class="section-intro">Select an offer to compare placements, value, and approval details.</p>
+            </div>
+            <div class="filter-group" aria-label="Marketplace filters">
+              <button class="filter-button active" type="button" data-filter="all">All offers</button>
+              <button class="filter-button" type="button" data-filter="available">Available</button>
+              <button class="filter-button" type="button" data-filter="review">Review required</button>
+            </div>
+          </div>
+          <div id="sponsorGrid" class="product-grid"></div>
+        </div>
+      </section>
+
+      <section class="benefit-promo">
+        <div class="shell benefit-promo-inner">
+          <div>
+            <p class="utility-label light-label">For every AYSO household</p>
+            <h2>Good stuff, beyond game day.</h2>
+            <p>Member offers on gear, tickets, soccer experiences, and family fun.</p>
+          </div>
+          <a class="button white-button" href="benefits.html">Browse AYSO Benefits</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="offerDrawer" class="drawer" aria-hidden="true">
+      <button class="drawer-scrim" type="button" data-close-drawer aria-label="Close offer details"></button>
+      <aside class="drawer-panel" aria-label="Selected sponsorship offer">
+        <button class="icon-button drawer-close" type="button" data-close-drawer aria-label="Close">×</button>
+        <div id="drawerContent"></div>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div class="footer-brand"><img src="assets/logos/ayso-square-white-512.png" alt="" /><span><strong>AYSO Marketplace</strong><small>Everyone Plays®</small></span></div>
+        <p>Value flows back to participating Regions.</p>
+        <nav><a href="benefits.html">Benefits</a><a href="explainers.html">How it works</a><a href="admin.html">Offer Manager</a></nav>
+      </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AYSO Marketplace Offer Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" /><link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="admin">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><div class="shell nav-shell">
+      <a class="brand-lockup" href="index.html" aria-label="AYSO Marketplace home"><img src="assets/logos/ayso-square-heritage-blue-on-field-white-512.png" alt="AYSO" /><span><strong>Marketplace</strong><small>Region opportunities</small></span></a>
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Marketplace</a><a href="benefits.html">AYSO Benefits</a><a href="explainers.html">How it works</a><a class="admin-link active" href="admin.html">Offer Manager</a></nav>
+    </div></header>
+    <main id="main">
+      <section class="admin-hero"><div class="shell admin-heading"><div><p class="utility-label light-label">Prototype controls</p><h1>Offer Manager</h1><p>Update marketplace and member-benefit content. Changes save in this browser.</p></div><div class="admin-actions"><button id="resetData" class="button secondary-button" type="button">Reset defaults</button><button id="saveData" class="button white-button" type="button">Save all changes</button></div></div></section>
+      <div id="saveNotice" class="save-notice" role="status" aria-live="polite"></div>
+      <section class="content-section"><div class="shell">
+        <div class="admin-intro"><div><p class="utility-label">Sponsorship inventory</p><h2>Marketplace offers</h2><p>Budget automatically reserves 20% for AYSO National administration. The remaining 80% is available for placements.</p></div><button id="addSponsor" class="button outline-button" type="button">Add sponsor offer</button></div>
+        <div id="sponsorEditor" class="editor-stack"></div>
+        <div class="admin-intro benefit-admin-heading"><div><p class="utility-label">Member offers</p><h2>AYSO Benefits</h2><p>Use verified partner links when available. Placeholder links remain clearly labeled.</p></div><button id="addBenefit" class="button outline-button" type="button">Add benefit</button></div>
+        <div id="benefitEditor" class="editor-stack"></div>
+      </div></section>
+    </main>
+    <footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><img src="assets/logos/ayso-square-white-512.png" alt="" /><span><strong>AYSO Marketplace</strong><small>Everyone Plays®</small></span></div><p>Prototype administration surface.</p><nav><a href="index.html">Marketplace</a><a href="benefits.html">Benefits</a><a href="explainers.html">How it works</a></nav></div></footer>
+    <script src="data.js"></script><script src="app.js"></script>
+  </body>
+</html>
